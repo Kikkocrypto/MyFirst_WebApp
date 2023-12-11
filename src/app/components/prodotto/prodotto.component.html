@@ -1,0 +1,93 @@
+<!-- id,nome,cognome,creditcard -->
+<!-- <button (click)="deleteClienteById(2)">DELETE</button> -->
+
+
+<!-- INSERT CLIENTE -->
+<div class="div_clienti">
+<form  [formGroup]="prodottoForm" (ngSubmit)="submitFormProdotto()">
+  <div class="div_form">
+    <h2>FORM AGGIUNTA PRODOTTO</h2>
+  <mat-form-field >
+    <mat-label for="nome">Inserisci nome prodotto</mat-label>
+    <input matInput id="nome" formControlName="nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="marca">Inserisci marca</mat-label>
+    <input matInput formControlName="marca">
+  </mat-form-field>
+  <mat-form-field for="prezzo">
+    <mat-label>Inserisci prezzo prodotto</mat-label>
+    <input matInput type="number" formControlName="prezzo">
+  </mat-form-field><button mat-fab matTooltip="Primary" color="primary" type="submit">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  </div>
+  </form>
+
+
+  <!-- UPDATE PRODOTTO -->
+<form  [formGroup]="updateFormProdotto" (ngSubmit)="updateByFormProdotto()">
+  <div class="div_form">
+    <h2>FORM UPDATE PRODOTTO</h2>
+    <div class= "container">
+      <div class="custom-select">
+        <label for="id_prodotto">Seleziona prodotto: </label>
+        <select id="id_prodotto" formControlName="id_prodotto">
+          @for(prodotto of prodotti | async; track prodotto.nome){
+            <option [value]="prodotto.id_prodotto">{{ prodotto.nome }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  <mat-form-field >
+    <mat-label for="nome">Inserisci nome Prodotto</mat-label>
+    <input matInput id="nome" formControlName="nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="marca">Inserisci marca</mat-label>
+    <input matInput formControlName="marca">
+  </mat-form-field>
+  <mat-form-field for="prezzo">
+    <mat-label >Inserisci prezzo prodotto</mat-label>
+    <input matInput type="number" formControlName="prezzo">
+  </mat-form-field><button mat-fab matTooltip="Primary" color="primary" type="submit">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  </div>
+  </form>
+  </div>
+
+
+  
+  <div class="container">
+    <h2 style="text-align: center;">TABELLA PRODOTTI</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">ID</div>
+        <div class="col col-2">Nome</div>
+        <div class="col col-3">Marca</div>
+        <div class="col col-4">Prezzo</div>
+        <button class="opacity0" disabled>DELETE</button>
+      </li>
+      <div *ngFor="let prodotto of prodotti | async">
+      <li class="table-row">
+        <div class="col col-1" >{{ prodotto.id_prodotto }}</div>
+        <div class="col col-2" >{{ prodotto.nome}}</div>
+        <div class="col col-3" >{{ prodotto.marca}}</div>
+        <div class="col col-4" >{{ prodotto.prezzo }}€</div>
+        <button class="button_delete" (click)="deleteProdottoById(prodotto?.id_prodotto)">DELETE</button>
+      </li>
+      </div>
+    </ul>
+      </div>
+
+
+      <div class="button_home">
+        <a class="button type--B" (click)="navigateToHome()">
+          <div class="button__line"></div>
+          <div class="button__line"></div>
+          <span class="button__text">TORNA ALLA HOME</span>
+          <div class="button__drow1"></div>
+          <div class="button__drow2"></div>
+        </a>
+        </div>

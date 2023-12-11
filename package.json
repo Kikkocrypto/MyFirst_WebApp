@@ -2,19 +2,21 @@
   "name": "backend-exe",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "npx ng serve --host 0.0.0.0 --poll=500",
+      "build": "npx ng build --prod demo",
+      "test": "npx ng test --browsers=ChromeHeadless",
+      "lint": "npx ng lint", 
+      "e2e": "npx ng e2e"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
+    "@angular/cdk": "^17.0.1",
     "@angular/common": "^17.0.0",
     "@angular/compiler": "^17.0.0",
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
+    "@angular/material": "^17.0.1",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",

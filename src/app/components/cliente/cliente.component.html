@@ -1,0 +1,96 @@
+<!-- id,nome,cognome,creditcard -->
+
+<!-- INSERT CLIENTE -->
+<!-- [formGroup]="clienteForm" (ngSubmit)="submitForm()" -->
+<div class="div_clienti">
+  <!-- padding: 10% 0 16%; -->
+<form  [formGroup]="clienteForm" (ngSubmit)="submitForm()">
+<div class="div_form">
+  <h2>FORM AGGIUNTA CLIENTE</h2>
+<mat-form-field >
+  <mat-label for="nome">Inserisci nome</mat-label>
+  <input matInput id="nome" formControlName="nome">
+</mat-form-field>
+<mat-form-field>
+  <mat-label for="cognome">Inserisci cognome</mat-label>
+  <input matInput formControlName="cognome">
+</mat-form-field>
+<mat-form-field for="cartaDiCredito">
+  <mat-label>Inserisci carta di credito</mat-label>
+  <input matInput formControlName="cartaDiCredito">
+</mat-form-field><button mat-fab matTooltip="Primary" color="primary" type="submit">
+  <mat-icon>favorite</mat-icon>
+</button>
+</div>
+</form>
+
+
+<!-- UPDATE CLIENTE -->
+<form  [formGroup]="updateForm" (ngSubmit)="updateByForm()">
+  <div class="div_form">
+    <h2>FORM UPDATE CLIENTE</h2>
+    <div class= "container">
+      <div class="custom-select">
+        <label for="id_cliente">Seleziona cliente: </label>
+        <select id="id_cliente" formControlName="id_cliente">
+          @for(cliente of clienti | async; track cliente.nome){
+            <option [value]="cliente.id_cliente">{{ cliente.nome + " " + cliente.cognome }}</option>
+          }
+        </select>
+      </div>
+    </div> 
+  <mat-form-field >
+    <mat-label for="nome">Inserisci nome</mat-label>
+    <input matInput id="nome" formControlName="nome">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="cognome">Inserisci cognome</mat-label>
+    <input matInput formControlName="cognome">
+  </mat-form-field>
+  <mat-form-field for="cartaDiCredito">
+    <mat-label>Inserisci carta di credito</mat-label>
+    <input matInput formControlName="cartaDiCredito">
+  </mat-form-field><button mat-fab matTooltip="Primary" color="primary" type="submit">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  </div>
+  </form>
+</div>
+
+
+  <div class="container">
+    <h2 style="text-align: center;">TABELLA CLIENTI</h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">ID Cliente</div>
+        <div class="col col-2">Nome</div>
+        <div class="col col-3">Cognome</div>
+        <div class="col col-4">Carta Di Credito</div>
+        <button class="opacity0" disabled>DELETE</button>
+      </li>
+      <div *ngFor="let cliente of clienti | async">
+      <li class="table-row">
+        <div class="col col-1" >{{ cliente.id_cliente }}</div>
+        <div class="col col-2" >{{ cliente.nome}}</div>
+        <div class="col col-3" >{{ cliente.cognome}}</div>
+        <div class="col col-4" >{{ cliente.cartaDiCredito }}</div>
+        <button class="button_delete" (click)="deleteClienteById(cliente?.id_cliente)">DELETE</button>
+      </li>
+      </div>
+    </ul>
+      </div>
+
+
+      <div class="button_home">
+        <a class="button type--B" (click)="navigateToHome()">
+          <div class="button__line"></div>
+          <div class="button__line"></div>
+          <span class="button__text">TORNA ALLA HOME</span>
+          <div class="button__drow1"></div>
+          <div class="button__drow2"></div>
+        </a>
+        </div>
+
+
+
+
