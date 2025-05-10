@@ -1,8 +1,6 @@
 # MyFirst_WebApp
-Web app completa di Back-end e Front-end.
-L'app è divisa in 3 branches.
+Web app complete with Back-end and Front-end. The app is divided into 3 branches.
 
-MAIN per visualizzare questo file di informazioni.
-BACK-END per visualizzare la logica dell'applicazione.
-FRONT-END per vedere l'applicazione al completo, compresa di grafica.
-Per poter funzionare con MySQL, si consiglia di modificare il file "Application.properties" in "resources" con i dati di connessione al DB (Password, nomeUtente e link di connessione)     LINK:  https://github.com/Kikkocrypto/MyFirst_WebApp/blob/Back-end/MyEXE_Spring_REST_JPA/src/main/resources/application.properties
+MAIN to display this information file. BACK-END to view the logic of the app. FRONT-END to view the full application, including graphics. In order to work with MySQL, it is recommended that the file “Application.properties” be changed to “resources” with the DB connection data (Password, nameUser and connection link) LINK:
+
+Translated with DeepL.com (free version)LINK:  https://github.com/Kikkocrypto/MyFirst_WebApp/blob/Back-end/MyEXE_Spring_REST_JPA/src/main/resources/application.properties
