@@ -1,11 +1,11 @@
-# 🌐 Web App Gestione Ordini
+# 🌐 Web App Order Management
 
-## 📌 Descrizione
-Web application full-stack sviluppata come progetto demo per un corso di formazione in programmazione full stack per l'azienda (Bit S.P.A). L'app consente la **gestione di ordini e utenti**, offrendo una semplice interfaccia frontend per l'inserimento e la visualizzazione dei dati, collegata a un backend strutturato con REST API.
+## 📌 Description
+Full-stack Web application developed as a demo project for a full-stack programming training course for the company (Bit S.P.A). The app enables **order and user management**, offering a simple frontend interface for data entry and visualization, connected to a structured backend with REST API.
 
 ---
 
-## 🛠️ Tecnologie utilizzate
+## 🛠️ Tech stack
 
 ### Backend – Spring Boot
 - Spring Boot (Java)
@@ -13,7 +13,7 @@ Web application full-stack sviluppata come progetto demo per un corso di formazi
 - Spring Data JPA
 - Hibernate
 - MySQL
-- Postman per la verifica degli API
+- Postman for APIs testing
 
 ### Frontend – Angular
 - Angular (TypeScript)
@@ -23,27 +23,27 @@ Web application full-stack sviluppata come progetto demo per un corso di formazi
 - Angular materials
 
 ---
-## 🚀 Come eseguire il progetto
+## 🚀 How to execute the project
 
 ### Backend
 
-1. Assicurati di avere MySQL attivo e un database chiamato ad esempio `gestionale`.
-2. Configura il file `application.properties` con le tue credenziali.
-3. Avvia il backend.
+1. Make sure you have MySQL active and a database called `management`, for example.
+2. Configure the `application.properties` file with your credentials.
+3. Start the backend.
 
 ## Frontend
 
-1. Installa dipendenze
-2. Avvia server angular 'ng serve'
-3. Visita http://localhost:4200
+1. Install dependencies
+2. Start angular 'ng serve' server
+3. Visit http://localhost:4200
 
 
 ---
-## 📚 Funzionalità principali
-- Visualizzazione lista ordini
+## 📚 Key features
+- Viewing order list
 
-- Aggiunta / modifica / cancellazione ordini
+- Adding / editing / deleting orders
 
-- Gestione utenti (base)
+- User management (basic)
 
-- Comunicazione API REST tra frontend e backend
+- REST API communication between frontend and backend
